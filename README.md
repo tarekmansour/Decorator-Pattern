@@ -6,3 +6,14 @@
 
 ## Usage
 I'm implementing the decorator pattern for caching strategy in this repository within a Product API HttpClient.
+
+### DI
+
+register in DI when using `ProductClient` outside:
+
+```c#
+service.AddProductsClient(new Uri(configuration.GetValue<string>("ProductsApi:BaseUrl")));
+
+//register cached client
+service.AddCachedProductsClient(new Uri(configuration.GetValue<string>("ProductsApi:BaseUrl")));
+```
