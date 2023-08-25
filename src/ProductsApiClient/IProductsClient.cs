@@ -1,7 +1,7 @@
 ﻿using ProductsApiClient.Models;
 
 namespace ProductsApiClient;
-public interface IProductClient
+public interface IProductsClient
 {
     Task<Product?> GetByIdAsync(Guid Id, CancellationToken cancellationToken = default);
 }

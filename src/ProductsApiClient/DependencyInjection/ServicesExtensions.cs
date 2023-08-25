@@ -15,7 +15,7 @@ public static class ServicesExtensions
                 "Failed to configure services: IServiceCollection is null.");
         }
 
-        return services.AddHttpClient<IProductClient>()
+        return services.AddHttpClient<IProductsClient>()
             .ConfigureHttpClient(client => client.BaseAddress = baseAddress);
     }
 
@@ -30,10 +30,10 @@ public static class ServicesExtensions
                 "Failed to configure services: IServiceCollection is null.");
         }
 
-        var httpClientBuilder = services.AddHttpClient<IProductClient>()
+        var httpClientBuilder = services.AddHttpClient<IProductsClient>()
             .ConfigureHttpClient(client => client.BaseAddress = baseAddress);
 
-        services.Decorate<IProductClient, CachedProductClient>();
+        services.Decorate<IProductsClient, CachedProductsClient>();
         services.AddMemoryCache();
 
         return httpClientBuilder;

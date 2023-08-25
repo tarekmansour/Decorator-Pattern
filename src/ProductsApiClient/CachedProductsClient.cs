@@ -1,15 +1,14 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using ProductsApiClient.Models;
-using System.Xml.Linq;
 
 namespace ProductsApiClient;
 
-public class CachedProductClient : IProductClient
+public class CachedProductsClient : IProductsClient
 {
-    private readonly IProductClient _decorated;
+    private readonly IProductsClient _decorated;
     private readonly IMemoryCache _memoryCache;
 
-    public CachedProductClient(IProductClient decorated, IMemoryCache memoryCache)
+    public CachedProductsClient(IProductsClient decorated, IMemoryCache memoryCache)
     {
         _decorated = decorated;
         _memoryCache = memoryCache;

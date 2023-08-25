@@ -3,12 +3,12 @@ using System.Net.Http.Json;
 
 namespace ProductsApiClient;
 
-public class ProductClient : IProductClient
+public class ProductsClient : IProductsClient
 {
     private const string ApiVersion = "1.0";
     private readonly HttpClient _httpClient;
 
-    public ProductClient(HttpClient httpClient)
+    public ProductsClient(HttpClient httpClient)
     {
         if (httpClient is null)
         {
